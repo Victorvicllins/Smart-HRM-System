@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile | Image</title>
+</head>
+<body>
+	<form method="POST" action="." enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		
+		<input type="submit" value="Send">
+	</form>
+
+
+</body>
+</html>

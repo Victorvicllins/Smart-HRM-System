@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>{{ query_set.staff_name.name }}</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;  
+            }
+            .title span {
+                color: #007cae;
+            }
+
+            .header2 {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: left;
+                color: #007cae;
+            }
+            .title2 {
+                font-size: 22px;
+                font-weight: 100px;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;  
+            }
+            .title2 span {
+                color: #d07ccf;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .spac{
+                margin: 10px 10px 100px 10px;
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+        </style>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='header'>
+                <p class='title'> {{ query_set.staff_name.name }}</p>
+            </div>
+        <div>
+        <div class='details'>
+            Department: {{ query_set.department}}<br/>
+            Designation: {{ query_set.designation|title }} <br/>
+            Tax due: {% if query_set.tax_apply %} {{ query_set.tax_apply }}{% else %}<small>No tax apply </small>{% endif %}<br/>
+            
+            
+            <hr class='hrItem'/>
+            <div class='header2'>
+                <p class='title2'> Payslip {{ query_set.payment_date }}</p>
+            </div>
+            <ul>
+                <li>Basic Salary - <strong>{{ query_set.basic_salary}}</strong></li>
+                <li>Wardrobe Allowance - <strong>{{ query_set.wardrobe_allowee }}</strong></li>
+                <li>Health Allowance - <strong>{{ query_set.health_allowee }}</strong></li>
+                <li>Transportation - <strong>{{ query_set.transport_allowee }}</strong></li>
+            </ul>
+            <h3>Deductions.</h3>
+            <ul>
+                <li>Tax = {% if query_set.tax_apply %} {{ query_set.tax_apply }}{% else %}<small>No tax apply </small>{% endif %}<br/></li>
+                <li>Pension = {% if query_set.pension_apply %} {{ query_set.pension_apply }}{% else %}<small>No pension charges </small>{% endif %}<br/></li>
+            </ul>
+            <p>Recievable Amount: {{ query_set.payable_amount }}</p>
+
+        </div>
+        <div class="spac">
+            
+        </div>
+           <p><small>{{ today }}</small></p><br>
+    
+    </body>
+</html>
+
