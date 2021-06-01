@@ -27,6 +27,6 @@ s3transfer==0.1.11
 six==1.11.0
 smmap2==2.0.3
 stripe==1.68.0
-urllib3==1.22
+urllib3==1.26.5
 webencodings==0.5.1
 xhtml2pdf==0.2.3
