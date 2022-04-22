@@ -18,7 +18,7 @@ jmespath==0.9.3
 olefile==0.44
 Pillow==4.3.0
 psycopg2==2.7.3.1
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 python-dateutil==2.6.1
 pytz==2017.2
 reportlab==3.5.12
