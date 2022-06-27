@@ -21,7 +21,7 @@ psycopg2==2.7.3.1
 PyPDF2==1.26.0
 python-dateutil==2.6.1
 pytz==2017.2
-reportlab==3.5.12
+reportlab==3.5.55
 requests==2.18.4
 s3transfer==0.1.11
 six==1.11.0
